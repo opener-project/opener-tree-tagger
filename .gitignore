@@ -1,7 +1,13 @@
-*.py[cod]
+tmp/*
+.DS_Store
+.idea/
+*.swp
+pkg/
+Gemfile.lock
+.rvmrc
 
-# C extensions
-*.so
+*.py[co]
+*~
 
 # Packages
 *.egg
@@ -10,13 +16,10 @@ dist
 build
 eggs
 parts
-bin
 var
 sdist
 develop-eggs
 .installed.cfg
-lib
-lib64
 
 # Installer logs
 pip-log.txt
@@ -24,12 +27,9 @@ pip-log.txt
 # Unit test / coverage reports
 .coverage
 .tox
-nosetests.xml
 
-# Translations
+#Translations
 *.mo
 
-# Mr Developer
+#Mr Developer
 .mr.developer.cfg
-.project
-.pydevproject
