@@ -1,4 +1,4 @@
 VU-tree-tagger_NL_kernel
 ========================
 
-kernel - treetagger for dutch
+kernel - treetagger for all languages
