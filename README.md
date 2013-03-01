@@ -1,4 +1,4 @@
-VU-tree-tagger_NL_kernel
-========================
+VU-tree-tagger_kernel
+=====================
 
 kernel - treetagger for all languages
