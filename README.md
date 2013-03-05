@@ -13,8 +13,9 @@ the attribute xml:lang in the main KAF element.
 Initial version
 ----------------
 
-TODO: Write a gem description
-
+This module has a dependency on the following external module:
+TreeTagger (http://www.ims.uni-stuttgart.de/projekte/corplex/TreeTagger/)
+More information is further down in this document.
 
 Installation
 ------------
