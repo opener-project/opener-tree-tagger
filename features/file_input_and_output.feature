@@ -8,6 +8,6 @@ Feature: Using files as input and output
     And I put it through the kernel
     Then the output should match the fixture "<output_file>"
   Examples:
-    | input_file            | output_file                                  |
-    | input.kaf             | output.kaf                                   |
+    | input.2.token.kaf            | output.2.token.kaf                                  |
+    | input.token.kaf       | output.token.kaf                                  |
 
