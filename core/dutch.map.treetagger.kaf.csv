@@ -1,0 +1,40 @@
+adj	G	adjective
+adj*kop	G	truncated adjective
+adjabbr	G	abbreviated adjective
+adv	A	adverb
+advabbr	A	abbreviated adverb
+conjcoord	C	coordinating conjunction
+conjsubo	C	subordinating conjunction
+det__art	D	article
+det__demo	D	attributively used demonstrative pronoun
+det__indef	D	attributively used indefinite pronoun
+det__poss	D	attributively used possessive pronoun
+det__quest	D	attributively used question pronoun
+det__rel	D	attributively used relative pronoun
+int		O	interjection
+noun*kop	N	truncated noun
+nounabbr	N	abbreviated noun
+nounpl	N	plural noun
+nounprop	R	proper name
+nounsg	N	singular noun
+num__card	O	cardinal number
+num__ord	O	ordinal number
+partte	O	particle "te"
+prep	P	preposition
+prepabbr	P	abbreviated preposition
+pronadv	Q	pronomial adverb
+prondemo	Q	demonstrative pronoun (used substitutively)
+pronindef	Q	indefined pronoun
+pronpers	Q	personal pronoun
+pronposs	Q	possessive pronoun
+pronquest	Q	question pronoun
+pronrefl	Q	reflexive pronoun
+pronrel	Q	relative pronoun
+punc	O	(non-sentential) punctuation
+verbinf	V	infinitival verb
+verbpapa	V	past participle verb
+verbpastpl	V	plural past tense verb
+verbpastsg	V	singular past tense verb
+verbpresp	V	present participle verb
+verbprespl	V	plural present tense verb
+verbpressg	V	singular present tense verb
