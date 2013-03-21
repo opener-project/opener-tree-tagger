@@ -3,6 +3,7 @@
 
 ## Modify this variable to point to your local installation of TreeTagger
 complete_path_to_treetagger = '/home/ruben/TreeTagger/'
+complete_path_to_treetagger = '/Users/ruben/TreeTagger/'
 
 __version__ = '1.2 4-Mar-2013'
 
