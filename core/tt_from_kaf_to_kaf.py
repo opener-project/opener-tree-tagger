@@ -100,11 +100,8 @@ if __name__=='__main__':
   
     data = {}
     new_tokens = []
-    print 'IN',text
-    print 'OUT',out
     for n,line in enumerate(out.splitlines()):
       line = line.decode('utf-8')
-      print 'TT',line
       my_id='t_'+str(n)
       
       token,pos,lemma = line.strip().split('\t')
