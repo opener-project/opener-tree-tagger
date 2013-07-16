@@ -59,7 +59,7 @@ if __name__=='__main__':
   
   
   if my_lang == 'en':
-    treetagger_cmd = complete_path_to_treetagger+'/cmd/tree-tagger-english-utf8'
+    treetagger_cmd = complete_path_to_treetagger+'/cmd/tree-tagger-english'
     mapping_file = this_folder +'/english.map.treetagger.kaf.csv'
   elif my_lang == 'nl':
     treetagger_cmd = complete_path_to_treetagger+'/cmd/tree-tagger-dutch-utf8'
@@ -90,24 +90,20 @@ if __name__=='__main__':
   
   for sentence in sentences:
     text = ' '.join(t for t,_ in sentence).encode('utf-8')
-    type(text)
     try:
       tt_proc = subprocess.Popen(treetagger_cmd,stdin=subprocess.PIPE, stdout=subprocess.PIPE,stderr=subprocess.PIPE)
     except Exception as e:
      print>>sys.stderr,str(e)
 
-    out, err = tt_proc.communicate(text)
+    tt_proc.stdin.write(text)
+    tt_proc.stdin.close()
   
     data = {}
     new_tokens = []
-    print 'IN',text
-    print 'OUT',out
-    for n,line in enumerate(out.splitlines()):
+    for n,line in enumerate(tt_proc.stdout):
       line = line.decode('utf-8')
-      print 'TT',line
       my_id='t_'+str(n)
-      
-      token,pos,lemma = line.strip().split('\t')
+      token,pos,lemma = line.strip().split()
       if lemma=='<unknown>': 
         lemma=token
         pos+=' unknown_lemma'
@@ -119,7 +115,7 @@ if __name__=='__main__':
         type_term = 'close'
       data[my_id] = (token,pos_kaf,lemma,type_term,pos)
       new_tokens.append((token,my_id))
-    #tt_proc.terminate()
+    tt_proc.terminate()
       
     mapping_tokens = {}
     token_matcher(sentence,new_tokens,mapping_tokens)
