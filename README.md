@@ -7,7 +7,7 @@ This module implements a wrapper to process text with the PoS tagger TreeTagger.
 This module takes KAF as input, with the token layer created (for instance by one of our tokenizer modules) and outputs KAF with a new term layer. It is important to note
 that the token layer in the input is not modified in the output, so the program takes care of performing the correct matching between the term and the token layer.
 
-By default this module works for text in English and Dutch, but can be easily extended to other languages. The language of the input KAF text has to be specified through
+By default this module works for text in English, Dutch and German, but can be easily extended to other languages. The language of the input KAF text has to be specified through
 the attribute xml:lang in the main KAF element.
 
 Initial version
