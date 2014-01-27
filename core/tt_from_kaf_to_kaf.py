@@ -65,7 +65,10 @@ if __name__=='__main__':
     mapping_file = this_folder +'/english.map.treetagger.kaf.csv'
   elif my_lang == 'nl':
     treetagger_cmd = complete_path_to_treetagger+'/cmd/tree-tagger-dutch-utf8'
-    mapping_file = this_folder +'/dutch.map.treetagger.kaf.csv'    
+    mapping_file = this_folder +'/dutch.map.treetagger.kaf.csv'   
+  elif my_lang == 'de':
+    treetagger_cmd = complete_path_to_treetagger+'/cmd/tree-tagger-german-utf8'
+    mapping_file = this_folder +'/german.map.treetagger.kaf.csv'
   else: ## Default is dutch
     treetagger_cmd = complete_path_to_treetagger+'/cmd/tree-tagger-dutch'
     mapping_file = this_folder +'/dutch.map.treetagger.kaf.csv'
