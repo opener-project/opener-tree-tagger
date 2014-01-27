@@ -1,3 +1,5 @@
+[![Build Status](https://drone.io/github.com/opener-project/VU-tree-tagger_kernel/status.png)](https://drone.io/github.com/opener-project/VU-tree-tagger_kernel/latest)
+
 # Opener::Kernel::VU::TreeTagger
 
 VU-tree-tagger_kernel
