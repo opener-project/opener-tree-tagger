@@ -2,7 +2,7 @@
 #-*- coding: utf8 *-*
 
 ## Modify this variable to point to your local installation of TreeTagger
-complete_path_to_treetagger = '/home/izquierdo/tools/treetagger'
+complete_path_to_treetagger = '/Users/ruben/NLP_tools/TreeTagger/'
 __version__ = '1.2 4-Mar-2013'
 
 ## Last changes
@@ -174,7 +174,7 @@ if __name__=='__main__':
         input_kaf.addElementToLayer('terms', ele_term)
   ##End for each sentence                                 
                                   
-  input_kaf.addLinguisticProcessor('TreeTagger_from_kaf','1.0', 'term', time_stamp)
+  input_kaf.addLinguisticProcessor('TreeTagger_from_kaf','1.0', 'terms', time_stamp)
   input_kaf.saveToFile(sys.stdout)
  
 
