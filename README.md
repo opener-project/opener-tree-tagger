@@ -1,9 +1,9 @@
 [![Build Status](https://drone.io/github.com/opener-project/VU-tree-tagger_kernel/status.png)](https://drone.io/github.com/opener-project/VU-tree-tagger_kernel/latest)
 
-# Opener::Kernel::VU::TreeTagger
+# Opener::TreeTagger
 
-VU-tree-tagger_kernel
-=====================
+Opener Tree Tagger
+==================
 
 This module implements a wrapper to process text with the PoS tagger TreeTagger. TreeTagger is a tool that assigns the lemmas and part-of-speech information to an input text.
 This module takes KAF as input, with the token layer created (for instance by one of our tokenizer modules) and outputs KAF with a new term layer. It is important to note
@@ -24,7 +24,7 @@ Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'VU-tree-tagger_kernel', :git=>"git@github.com/opener-project/VU-tree-tagger_kernel.git"
+    gem 'opener-tree-tagger', :git=>"git@github.com/opener-project/opener-tree-tagger.git"
 
 And then execute:
 ````shell
@@ -33,7 +33,7 @@ $ bundle install
 
 Or install it yourself as:
 ````shell
-$ gem specific_install VU-tree-tagger_kernel -l https://github.com/opener-project/VU-tree-tagger_kernel.git
+$ gem specific_install opener-tree-tagger -l https://github.com/opener-project/opener-tree-tagger.git
 ````
 
 If you dont have specific_install already:
@@ -43,29 +43,24 @@ If you dont have specific_install already:
 
 Finally you have to indicate to your program where TreeTagger is installed in your machine, which is a requirement. If TreeTagger is not installed in your machine
 you can download it from http://www.ims.uni-stuttgart.de/projekte/corplex/TreeTagger/ and follow the installation instructions. To indicate to our scripts where
-TreeTagger is located, you have to edit the script core/tt_from_kaf_to_kaf.py and modify the variable complete_path_to_treetagger with the complete path to your
-local installation of TreeTagger. By default that variable will point to my own local installation of TreeTagger:
-````shell
-## Modify this variable to point to your local installation of TreeTagger
-complete_path_to_treetagger = '/home/ruben/TreeTagger/'
-````
+TreeTagger is located, you have to set an environment variable with the
+location:
 
-Assuming TreeTagger is installed in /usr/local/TreeTagger, you should modify the variable as:
-````shell
-## Modify this variable to point to your local installation of TreeTagger
-complete_path_to_treetagger = '/usr/local/TreeTagger/'
-````
+```shell
+export TREE_TAGGER_PATH=/usr/local/TreeTagger/
+```
 
+It is advised you add the path to the tree tagger in your bash or zsh profile by
+adding it to ```~/.bash_profile``` or ```~/.zshrc```
 
 
 Usage
 ----
 
-
 Once installed as a gem you can access the gem from anywhere. The input has to be KAF format with the token layer created.
 
 ````shell
-cat input.token.kaf | VU-tree-tagger_kernel > output.token.term.kaf
+cat input.token.kaf | opener-tree-tagger > output.token.term.kaf
 ````
 
 In the file output.token.term.kaf we will have the KAF file extended with the term layer (containing both lemma and PoS information)
