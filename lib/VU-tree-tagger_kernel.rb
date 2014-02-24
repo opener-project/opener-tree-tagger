@@ -2,7 +2,7 @@ module Opener
    module Kernel
      module VU
        module TreeTagger
-      		VERSION = "0.0.1"
+      		VERSION = "0.0.2"
 
       		class Configuration
         		CORE_DIR    = File.expand_path("../core", File.dirname(__FILE__))
