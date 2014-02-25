@@ -8,7 +8,7 @@
       <lp name="SentenceTokenizer" timestamp="2013-02-20T11:50:20CET" version="2.0"/>
     </linguisticProcessors>
     <linguisticProcessor layer="term">
-      <lp timestamp="*" version="1.0" name="TreeTagger_from_kaf"/>
+      <lp timestamp="*" version="1.0" name="TreeTagger_from_kaf Dutch models"/>
     </linguisticProcessor>
   </kafHeader>
   <text>
@@ -39,132 +39,127 @@
     <wf para="1" sent="2" wid="w_25">sentence</wf>
   </text>
   <terms>
-    <term lemma="Beatrix" morphofeat="nounsg unknown_lemma" pos="O" tid="t_1" type="open">
+    <term lemma="Beatrix" morphofeat="nounsg unknown_lemma" pos="O" tid="t1" type="open">
       <span>
         <target id="w_1"/>
       </span>
     </term>
-    <term lemma="Wilhelmina" morphofeat="nounpl unknown_lemma" pos="O" tid="t_2" type="open">
+    <term lemma="Wilhelmina" morphofeat="nounpl unknown_lemma" pos="O" tid="t2" type="open">
       <span>
         <target id="w_2"/>
       </span>
     </term>
-    <term lemma="Armgard" morphofeat="nounsg unknown_lemma" pos="O" tid="t_3" type="open">
+    <term lemma="Armgard" morphofeat="nounsg unknown_lemma" pos="O" tid="t3" type="open">
       <span>
         <target id="w_3"/>
       </span>
     </term>
-    <term lemma="van" morphofeat="prep" pos="P" tid="t_4" type="close">
+    <term lemma="van" morphofeat="prep" pos="P" tid="t4" type="close">
       <span>
         <target id="w_4"/>
       </span>
     </term>
-    <term lemma="oranje" morphofeat="nounsg" pos="N" tid="t_5" type="open">
+    <term lemma="oranje" morphofeat="nounsg" pos="N" tid="t5" type="open">
       <span>
         <target id="w_5"/>
       </span>
     </term>
-    <term lemma="-Nassau" morphofeat="nounprop unknown_lemma" pos="O" tid="t_6" type="open">
+    <term lemma="-Nassau" morphofeat="nounprop unknown_lemma" pos="O" tid="t6" type="open">
       <span>
         <target id="w_6"/>
       </span>
     </term>
-    <term lemma="(" morphofeat="punc" pos="O" tid="t_7" type="open">
+    <term lemma="(baarn" morphofeat="punc" pos="O" tid="t7" type="open">
       <span>
         <target id="w_7"/>
       </span>
     </term>
-    <term lemma="Baarn" morphofeat="nounsg unknown_lemma" pos="O" tid="t_8" type="open">
-      <span>
-        <target id="w_7"/>
-      </span>
-    </term>
-    <term lemma="," morphofeat="punc" pos="O" tid="t_9" type="open">
+    <term lemma="," morphofeat="punc" pos="O" tid="t8" type="open">
       <span>
         <target id="w_8"/>
       </span>
     </term>
-    <term lemma="@card@" morphofeat="num__card" pos="O" tid="t_10" type="open">
+    <term lemma="@card@" morphofeat="num__card" pos="O" tid="t9" type="open">
       <span>
         <target id="w_9"/>
       </span>
     </term>
-    <term lemma="januari" morphofeat="nounprop" pos="R" tid="t_11" type="open">
+    <term lemma="januari" morphofeat="nounprop" pos="R" tid="t10" type="open">
       <span>
         <target id="w_10"/>
       </span>
     </term>
-    <term lemma="@card@" morphofeat="num__card" pos="O" tid="t_12" type="open">
+    <term lemma="@card@" morphofeat="num__card" pos="O" tid="t11" type="open">
       <span>
         <target id="w_11"/>
       </span>
     </term>
-    <term lemma=")" morphofeat="punc" pos="O" tid="t_13" type="open">
+    <term lemma=")" morphofeat="punc" pos="O" tid="t12" type="open">
       <span>
         <target id="w_12"/>
       </span>
     </term>
-    <term lemma="zijn" morphofeat="verbpressg" pos="V" tid="t_14" type="open">
+    <term lemma="zijn" morphofeat="verbpressg" pos="V" tid="t13" type="open">
       <span>
         <target id="w_13"/>
       </span>
     </term>
-    <term lemma="sinds" morphofeat="prep" pos="P" tid="t_15" type="close">
+    <term lemma="sinds" morphofeat="prep" pos="P" tid="t14" type="close">
       <span>
         <target id="w_14"/>
       </span>
     </term>
-    <term lemma="@card@" morphofeat="num__card" pos="O" tid="t_16" type="open">
+    <term lemma="@card@" morphofeat="num__card" pos="O" tid="t15" type="open">
       <span>
         <target id="w_15"/>
       </span>
     </term>
-    <term lemma="april" morphofeat="nounprop" pos="R" tid="t_17" type="open">
+    <term lemma="april" morphofeat="nounprop" pos="R" tid="t16" type="open">
       <span>
         <target id="w_16"/>
       </span>
     </term>
-    <term lemma="@card@" morphofeat="num__card" pos="O" tid="t_18" type="open">
+    <term lemma="@card@" morphofeat="num__card" pos="O" tid="t17" type="open">
       <span>
         <target id="w_17"/>
       </span>
     </term>
-    <term lemma="koningin" morphofeat="nounsg" pos="N" tid="t_19" type="open">
+    <term lemma="koningin" morphofeat="nounsg" pos="N" tid="t18" type="open">
       <span>
         <target id="w_18"/>
       </span>
     </term>
-    <term lemma="van" morphofeat="prep" pos="P" tid="t_20" type="close">
+    <term lemma="van" morphofeat="prep" pos="P" tid="t19" type="close">
       <span>
         <target id="w_19"/>
       </span>
     </term>
-    <term lemma="het" morphofeat="det__art" pos="D" tid="t_21" type="close">
+    <term lemma="het" morphofeat="det__art" pos="D" tid="t20" type="close">
       <span>
         <target id="w_20"/>
       </span>
     </term>
-    <term lemma="koninkrijk" morphofeat="nounsg" pos="N" tid="t_22" type="open">
+    <term lemma="koninkrijk" morphofeat="nounsg" pos="N" tid="t21" type="open">
       <span>
         <target id="w_21"/>
       </span>
     </term>
-    <term lemma="de" morphofeat="det__art" pos="D" tid="t_23" type="close">
+    <term lemma="de" morphofeat="det__art" pos="D" tid="t22" type="close">
       <span>
         <target id="w_22"/>
       </span>
     </term>
-    <term lemma="Nederlandén" morphofeat="nounsg unknown_lemma" pos="O" tid="t_24" type="open">
+    <term lemma="Nederlandén" morphofeat="nounsg unknown_lemma" pos="O" tid="t23" type="open">
       <span>
         <target id="w_23"/>
       </span>
     </term>
-    <term lemma="Another" morphofeat="adj unknown_lemma" pos="O" tid="t_25" type="open">
+    <term lemma="Another" morphofeat="adj unknown_lemma" pos="O" tid="t24" type="open">
       <span>
         <target id="w_24"/>
       </span>
     </term>
-    <term lemma="sentence" morphofeat="nounsg unknown_lemma" pos="O" tid="t_26" type="open">
+    <term lemma="sentence" morphofeat="nounsg unknown_lemma" pos="O" tid="t25" type="open">
       <span>
         <target id="w_25"/>
       </span>
