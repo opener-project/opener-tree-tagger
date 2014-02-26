@@ -24,7 +24,8 @@ import os.path
 
 if not os.environ.get('TREE_TAGGER_PATH'):
   print>>sys.stderr,"TREE_TAGGER_PATH environment variable not found. Please set the full path to your tree tagger in the TREE_TAGGER_PATH environent variable."
-
+  sys.exit(-1)
+  
 complete_path_to_treetagger = os.environ.get('TREE_TAGGER_PATH')
 
 
@@ -57,6 +58,7 @@ if __name__=='__main__':
   except getopt.GetoptError:
     pass
 
+
   input_kaf = KafParser(sys.stdin)
   my_lang = input_kaf.getLanguage()
 
@@ -64,16 +66,20 @@ if __name__=='__main__':
   if my_lang == 'en':
     treetagger_cmd = complete_path_to_treetagger+'/cmd/tree-tagger-english-utf8'
     mapping_file = this_folder +'/english.map.treetagger.kaf.csv'
+    model = 'English models'
   elif my_lang == 'nl':
     treetagger_cmd = complete_path_to_treetagger+'/cmd/tree-tagger-dutch-utf8'
     mapping_file = this_folder +'/dutch.map.treetagger.kaf.csv'
+    model = 'Dutch models'
   elif my_lang == 'de':
     treetagger_cmd = complete_path_to_treetagger+'/cmd/tree-tagger-german-utf8'
     mapping_file = this_folder +'/german.map.treetagger.kaf.csv'
+    model = 'German models'
   else: ## Default is dutch
-    treetagger_cmd = complete_path_to_treetagger+'/cmd/tree-tagger-dutch'
+    treetagger_cmd = complete_path_to_treetagger+'/cmd/tree-tagger-dutch-utf8'
     mapping_file = this_folder +'/dutch.map.treetagger.kaf.csv'
-
+    model = 'Dutch models'
+    
   map_tt_to_kaf = loadMapping(mapping_file)
 
 
@@ -181,7 +187,7 @@ if __name__=='__main__':
         input_kaf.addElementToLayer('terms', ele_term)
   ##End for each sentence
 
-  input_kaf.addLinguisticProcessor('TreeTagger_from_kaf','1.0', 'terms', time_stamp)
+  input_kaf.addLinguisticProcessor('TreeTagger_from_kaf '+model,'1.0', 'term', time_stamp)  
   input_kaf.saveToFile(sys.stdout)
 
 
