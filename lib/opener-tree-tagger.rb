@@ -1,6 +1,6 @@
 module Opener
   module TreeTagger
-    VERSION = "0.9.0"
+    VERSION = "0.10.0"
 
     class Configuration
       CORE_DIR    = File.expand_path("../core", File.dirname(__FILE__))
