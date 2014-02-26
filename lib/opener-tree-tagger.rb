@@ -9,4 +9,4 @@ module Opener
   end
 end
 
-KERNEL_CORE=Opener::TreeTagger
+KERNEL_CORE=Opener::TreeTagger::Configuration::KERNEL_CORE
