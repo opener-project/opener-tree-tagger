@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
-$:.unshift(File.dirname(__FILE__) + '/../lib') unless $:.include?(File.dirname(__FILE__) + '/../lib')
 
-require 'opener-tree-tagger'
+require_relative '../lib/opener/tree_tagger'
 
-puts `#{KERNEL_CORE}`
+cli = Opener::TreeTagger::CLI.new(:args => ARGV)
+
+puts cli.run(STDIN.tty? ? nil : STDIN.read)
