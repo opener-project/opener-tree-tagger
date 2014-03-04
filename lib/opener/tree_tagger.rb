@@ -28,7 +28,9 @@ module Opener
     end
 
     def run(input)
-      return Open3.capture3(command, :stdin_data=>input)
+      o,e,s = Open3.capture3(*command.split(" "), :stdin_data=>input)
+      puts o
+      return [o,e,s]
     end
 
     def command
