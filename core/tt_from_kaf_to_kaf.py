@@ -7,6 +7,7 @@ __version__ = '1.2 4-Mar-2013'
 # 4-Mar-2013 --> added code for including the element in the linguistic processores header
 # 5-Mar-2013 --> language is not a parameter, is read from the input KAF
 # 9-dec-2013 --> the postagger avoids 2 terms with the same tokenid span, like 's --> '   and  s
+# 11-mar-2014 --> fixed problem when merge with token_matcher
 ###################################
 
 
@@ -120,7 +121,6 @@ if __name__=='__main__':
     for n,line in enumerate(out.splitlines()):
       line = line.decode('utf-8')
       my_id='t_'+str(n)
-
       token,pos,lemma = line.strip().split('\t')
       if lemma=='<unknown>':
         lemma=token
