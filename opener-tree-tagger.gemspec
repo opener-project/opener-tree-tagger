@@ -19,6 +19,12 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.bindir        = 'bin'
 
+  gem.add_dependency 'opener-build-tools', ['>= 0.2.7']
+  gem.add_dependency 'rake'
+  gem.add_dependency 'sinatra'
+  gem.add_dependency 'httpclient'
+  gem.add_dependency 'opener-webservice'
+
   gem.add_development_dependency 'rspec'
   gem.add_development_dependency 'cucumber'
 
