@@ -7,9 +7,9 @@
     <linguisticProcessors layer="terms">
       <lp name="SentenceTokenizer" timestamp="2013-02-20T11:50:20CET" version="2.0"/>
     </linguisticProcessors>
-    <linguisticProcessor layer="term">
+    <linguisticProcessors layer="term">
       <lp timestamp="*" version="1.0" name="TreeTagger_from_kaf Dutch models"/>
-    </linguisticProcessor>
+    </linguisticProcessors>
   </kafHeader>
   <text>
     <wf para="1" sent="1" wid="w_1">Beatrix</wf>
