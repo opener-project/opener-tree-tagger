@@ -1,5 +1,5 @@
 module Opener
   class TreeTagger
-    VERSION = "0.12.1"
+    VERSION = "1.0.1"
   end
 end
