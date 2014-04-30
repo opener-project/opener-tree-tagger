@@ -12,6 +12,15 @@ __version__ = '1.2 4-Mar-2013'
 
 
 import sys
+import os
+
+this_folder    = os.path.dirname(os.path.realpath(__file__))
+
+# This updates the load path to ensure that the local site-packages directory
+# can be used to load packages (e.g. a locally installed copy of lxml).
+sys.path.append(os.path.join(this_folder, 'site-packages/pre_build'))
+sys.path.append(os.path.join(this_folder, 'site-packages/pre_install'))
+
 import operator
 import time
 import getopt
@@ -20,8 +29,8 @@ import subprocess
 from lxml.etree import ElementTree as ET, Element as EL, PI
 from VUKafParserPy.KafParserMod import KafParser
 from token_matcher import token_matcher
-import os
-import os.path
+
+
 
 if not os.environ.get('TREE_TAGGER_PATH'):
   print>>sys.stderr,"TREE_TAGGER_PATH environment variable not found. Please set the full path to your tree tagger in the TREE_TAGGER_PATH environent variable."
