@@ -6,7 +6,7 @@ require_relative 'tree_tagger/cli'
 
 module Opener
   class TreeTagger
-    attr_reader :options
+    attr_reader :options, :args
 
     ##
     # Hash containing the default options to use.
@@ -24,17 +24,35 @@ module Opener
     #  to the underlying kernel.
     #
     def initialize(options = {})
+      @args          = options.delete(:args) || []
       @options = DEFAULT_OPTIONS.merge(options)
     end
 
     def run(input)
-      o,e,s = Open3.capture3(*command.split(" "), :stdin_data=>input)
-      puts o
-      return [o,e,s]
+      capture(input)
+    end
+    
+    def capture(input)
+      Open3.popen3(*command.split(" ")) {|i, o, e, t|
+        out_reader = Thread.new { o.read }
+        err_reader = Thread.new { e.read }
+        i.write input
+        i.close
+        [out_reader.value, err_reader.value, t.value]
+      }
     end
 
     def command
-      "python -E -O #{kernel} #{options[:args].join(' ')}"
+      return "#{adjust_python_path} python -E -OO #{kernel} #{args.join(' ')}"
+    end
+    
+    protected
+    ##
+    # @return [String]
+    #
+    def adjust_python_path
+      site_packages =  File.join(core_dir, 'site-packages')
+      "env PYTHONPATH=#{site_packages}:$PYTHONPATH"
     end
 
     def core_dir
