@@ -21,6 +21,10 @@ sdist
 develop-eggs
 .installed.cfg
 
+# Ignore the Python package files.
+core/site-packages/pre_build/*
+core/site-packages/pre_install/*
+
 # Installer logs
 pip-log.txt
 
