@@ -26,6 +26,7 @@ import getopt
 import string
 import subprocess
 import lxml
+from lxml import etree
 from lxml.etree import ElementTree as ET, Element as EL, PI
 from VUKafParserPy.KafParserMod import KafParser
 from token_matcher import token_matcher
