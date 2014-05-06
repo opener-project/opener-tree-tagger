@@ -19,6 +19,10 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.bindir        = 'bin'
 
+  gem.add_dependency 'opener-build-tools'
+  gem.add_dependency 'opener-webservice'
+  gem.add_dependency 'opener-daemons'
+
   gem.add_development_dependency 'rspec'
   gem.add_development_dependency 'cucumber'
 
