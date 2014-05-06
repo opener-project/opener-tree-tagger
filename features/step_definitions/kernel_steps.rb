@@ -21,5 +21,5 @@ def tmp_file(filename)
 end
 
 def kernel
-  Opener::TreeTagger.new
+  Opener::TreeTagger.new(:args => ['--no-time'])
 end
