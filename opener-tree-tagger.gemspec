@@ -4,6 +4,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 require 'opener/tree_tagger/version'
 
+generated = Dir.glob('core/site-packages/pre_build/**/*')
+
 Gem::Specification.new do |gem|
   gem.name          = "opener-tree-tagger"
   gem.version       = Opener::TreeTagger::VERSION
@@ -13,7 +15,7 @@ Gem::Specification.new do |gem|
   gem.summary       = gem.description
   gem.homepage      = "http://opener-project.github.com/"
 
-  gem.files         = `git ls-files`.split($/)
+  gem.files       = (`git ls-files`.split("\n") + generated).sort
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
