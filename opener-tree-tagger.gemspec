@@ -21,6 +21,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.bindir        = 'bin'
 
+  gem.add_dependency 'opener-daemons'
   gem.add_dependency 'opener-build-tools', ['>= 0.2.7']
   gem.add_dependency 'rake'
   gem.add_dependency 'sinatra'
