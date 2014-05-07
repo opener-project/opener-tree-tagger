@@ -24,28 +24,30 @@ module Opener
     #  to the underlying kernel.
     #
     def initialize(options = {})
-      @args          = options.delete(:args) || []
+      @args    = options.delete(:args) || []
       @options = DEFAULT_OPTIONS.merge(options)
     end
 
     def run(input)
-      capture(input)
+      stdout, stderr, process = capture(input)
+
+      if process.success?
+        STDERR.puts(stderr) unless stderr.empty?
+      else
+        abort stderr
+      end
+
+      return stdout, stderr, process
     end
-    
+
     def capture(input)
-      Open3.popen3(*command.split(" ")) {|i, o, e, t|
-        out_reader = Thread.new { o.read }
-        err_reader = Thread.new { e.read }
-        i.write input
-        i.close
-        [out_reader.value, err_reader.value, t.value]
-      }
+      Open3.capture3(*command.split(" "), :stdin_data=>input)
     end
 
     def command
       return "#{adjust_python_path} python -E -OO #{kernel} #{args.join(' ')}"
     end
-    
+
     protected
     ##
     # @return [String]
