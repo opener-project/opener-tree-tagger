@@ -8,7 +8,9 @@ Feature: Using files as input and output
     And I put it through the kernel
     Then the output should match the fixture "<output_file>"
   Examples:
-    | input_file        | output_file        |
-    | input.2.token.kaf | output.2.token.kaf |
-    | input.token.kaf   | output.token.kaf   |
-
+    | input.en.kaf      | output.en.kaf      |
+    | input.nl.kaf      | output.nl.kaf      |
+    | input.de.kaf      | output.de.kaf      |
+    | input.fr.kaf      | output.fr.kaf      |
+    | input.it.kaf      | output.it.kaf      |
+    | input.es.kaf      | output.es.kaf      |

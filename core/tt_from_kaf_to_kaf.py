@@ -86,6 +86,18 @@ if __name__=='__main__':
     treetagger_cmd = complete_path_to_treetagger+'/cmd/tree-tagger-german-utf8'
     mapping_file = this_folder +'/german.map.treetagger.kaf.csv'
     model = 'German models'
+  elif my_lang == 'fr':
+    treetagger_cmd = complete_path_to_treetagger+'/cmd/tree-tagger-french-utf8'
+    mapping_file = this_folder +'/french.map.treetagger.kaf.csv'
+    model = 'French models'
+  elif my_lang == 'it':
+    treetagger_cmd = complete_path_to_treetagger+'/cmd/tree-tagger-italian-utf8'
+    mapping_file = this_folder +'/italian.map.treetagger.kaf.csv'
+    model = 'Italian models'
+  elif my_lang == 'es':
+    treetagger_cmd = complete_path_to_treetagger+'/cmd/tree-tagger-spanish-utf8'
+    mapping_file = this_folder +'/spanish.map.treetagger.kaf.csv'
+    model = 'Spanish models'
   else: ## Default is dutch
     treetagger_cmd = complete_path_to_treetagger+'/cmd/tree-tagger-dutch-utf8'
     mapping_file = this_folder +'/dutch.map.treetagger.kaf.csv'
@@ -132,11 +144,11 @@ if __name__=='__main__':
       line = line.decode('utf-8')
       my_id='t_'+str(n)
       token,pos,lemma = line.strip().split('\t')
+      pos_kaf = map_tt_to_kaf.get(pos,'O')
+
       if lemma=='<unknown>':
         lemma=token
         pos+=' unknown_lemma'
-
-      pos_kaf = map_tt_to_kaf.get(pos,'O')
       if pos_kaf in ['N','R','G','V','A','O']:
         type_term = 'open'
       else:
