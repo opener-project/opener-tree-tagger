@@ -31,7 +31,7 @@ module Opener
     def run(input)
       capture(input)
     end
-    
+
     def capture(input)
       Open3.popen3(*command.split(" ")) {|i, o, e, t|
         out_reader = Thread.new { o.read }
@@ -45,8 +45,9 @@ module Opener
     def command
       return "#{adjust_python_path} python -E -OO #{kernel} #{args.join(' ')}"
     end
-    
+
     protected
+
     ##
     # @return [String]
     #
@@ -62,7 +63,5 @@ module Opener
     def kernel
       File.join(core_dir,'/tt_from_kaf_to_kaf.py')
     end
-
-
   end
 end
