@@ -27,21 +27,23 @@ information is further down in this document.
 Installation
 ------------
 
-Add this line to your application's Gemfile:
+The TreeTagger module comes as a Ruby Gem and can be installed as following:
 
-    gem 'opener-tree-tagger', :git=>"git@github.com/opener-project/opener-tree-tagger.git"
+    gem install opener-tree-tagger
 
-And then execute:
+If you're using Bundler you can add this Gem to your Gemfile:
 
-    $ bundle install
+    source 'https://rubygems.org'
 
-Or install it yourself as:
+    gem 'opener-tree-tagger'
 
-    $ gem specific_install opener-tree-tagger -l https://github.com/opener-project/opener-tree-tagger.git
+Then run `bundle install` to install the Gem.
 
-If you dont have specific\_install already:
+Alternatively you can use `specific_install`:
 
-    $ gem install specific_install
+    gem install specific_install
+    gem specific_install opener-tree-tagger \
+        -l https://github.com/opener-project/opener-tree-tagger.git
 
 Finally you have to indicate to your program where TreeTagger is installed in
 your machine, which is a requirement. If TreeTagger is not installed in your
