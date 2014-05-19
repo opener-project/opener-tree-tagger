@@ -49,6 +49,7 @@ module Opener
     end
 
     protected
+
     ##
     # @return [String]
     #
@@ -64,7 +65,5 @@ module Opener
     def kernel
       File.join(core_dir,'/tt_from_kaf_to_kaf.py')
     end
-
-
   end
 end

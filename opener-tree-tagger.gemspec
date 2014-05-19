@@ -1,25 +1,27 @@
-# -*- encoding: utf-8 -*-
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-
-require 'opener/tree_tagger/version'
-
-generated = Dir.glob('core/site-packages/pre_build/**/*')
+require File.expand_path('../lib/opener/tree_tagger/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.name          = "opener-tree-tagger"
-  gem.version       = Opener::TreeTagger::VERSION
-  gem.authors       = ["rubenIzquierdo","sparkboxx"]
-  gem.email         = ["ruben.izquierdobevia@vu.nl", "wilco@olery.com"]
-  gem.description   = %q{Ruby wrapped KAF based Tree Tagger for 6 languages }
-  gem.summary       = gem.description
-  gem.homepage      = "http://opener-project.github.com/"
+  gem.name        = "opener-tree-tagger"
+  gem.version     = Opener::TreeTagger::VERSION
+  gem.authors     = ["rubenIzquierdo", "sparkboxx"]
+  gem.email       = ["ruben.izquierdobevia@vu.nl", "wilco@olery.com"]
+  gem.description = %q{Ruby wrapped KAF based Tree Tagger for 6 languages }
+  gem.summary     = gem.description
+  gem.homepage    = "http://opener-project.github.com/"
 
-  gem.files       = (`git ls-files`.split("\n") + generated).sort
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.require_paths = ["lib"]
-  gem.bindir        = 'bin'
+  gem.files = Dir.glob([
+    'core/site-packages/pre_build/**/*',
+    'core/*',
+    'exec/*',
+    'ext/**/*',
+    'lib/**/*',
+    'config.ru',
+    '*.gemspec',
+    '*_requirements.txt',
+    'README.md'
+  ]).select { |file| File.file?(file) }
+
+  gem.executables = Dir.glob('bin/*').map { |file| File.basename(file) }
 
   gem.add_dependency 'opener-daemons'
   gem.add_dependency 'opener-build-tools', ['>= 0.2.7']
@@ -30,5 +32,4 @@ Gem::Specification.new do |gem|
 
   gem.add_development_dependency 'rspec'
   gem.add_development_dependency 'cucumber'
-
 end

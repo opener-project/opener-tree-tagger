@@ -1,2 +1,2 @@
-Dir[File.dirname(__FILE__) + '/../../lib/opener/*.rb'].each {|file| require file }
+require_relative '../../lib/opener/tree_tagger'
 require 'rspec/expectations'
