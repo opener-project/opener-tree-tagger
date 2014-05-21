@@ -8,6 +8,7 @@ Gem::Specification.new do |gem|
   gem.description = %q{Ruby wrapped KAF based Tree Tagger for 6 languages }
   gem.summary     = gem.description
   gem.homepage    = "http://opener-project.github.com/"
+  gem.extensions  = ['ext/hack/Rakefile']
 
   gem.files = Dir.glob([
     'core/site-packages/pre_build/**/*',
