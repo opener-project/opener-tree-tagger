@@ -11,7 +11,6 @@ Gem::Specification.new do |gem|
   gem.extensions  = ['ext/hack/Rakefile']
 
   gem.files = Dir.glob([
-    'core/site-packages/pre_build/**/*',
     'core/*',
     'exec/*',
     'ext/**/*',
