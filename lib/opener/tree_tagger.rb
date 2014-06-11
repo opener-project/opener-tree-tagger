@@ -1,8 +1,10 @@
 require 'open3'
 require 'optparse'
+require 'nokogiri'
 
 require_relative 'tree_tagger/version'
 require_relative 'tree_tagger/cli'
+require_relative 'tree_tagger/error_layer'
 
 module Opener
   class TreeTagger
@@ -29,15 +31,13 @@ module Opener
     end
 
     def run(input)
-      stdout, stderr, process = capture(input)
-
-      if process.success?
-        STDERR.puts(stderr) unless stderr.empty?
-      else
-        abort stderr
-      end
-
-      return stdout, stderr, process
+      begin
+        stdout, stderr, process = capture(input)
+        raise stderr unless process.success?
+        return stdout
+      rescue Exception => error
+        return ErrorLayer.new(input, error.message, self.class).add
+      end        
     end
 
     def capture(input)
