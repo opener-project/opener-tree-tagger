@@ -1,2 +1,12 @@
 require_relative '../../lib/opener/tree_tagger'
-require 'rspec/expectations'
+require 'rspec'
+
+RSpec.configure do |config|
+  config.expect_with :rspec do |c|
+    c.syntax = [:should, :expect]
+  end
+
+  config.mock_with :rspec do |c|
+    c.syntax = [:should, :expect]
+  end
+end
