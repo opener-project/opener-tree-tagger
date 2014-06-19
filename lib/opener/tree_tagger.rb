@@ -1,6 +1,7 @@
 require 'open3'
 require 'optparse'
 require 'nokogiri'
+require 'opener/core'
 
 require_relative 'tree_tagger/version'
 require_relative 'tree_tagger/cli'
