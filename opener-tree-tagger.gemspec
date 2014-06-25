@@ -10,6 +10,8 @@ Gem::Specification.new do |gem|
   gem.homepage    = "http://opener-project.github.com/"
   gem.extensions  = ['ext/hack/Rakefile']
 
+  gem.license = 'Apache 2.0'
+
   gem.files = Dir.glob([
     'core/*',
     'exec/*',
@@ -19,6 +21,7 @@ Gem::Specification.new do |gem|
     '*.gemspec',
     '*_requirements.txt',
     'README.md',
+    'LICENSE.txt',
     'task/*'
   ]).select { |file| File.file?(file) }
 
