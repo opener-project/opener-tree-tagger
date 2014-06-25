@@ -46,7 +46,7 @@ module Opener
     end
 
     def command
-      return "python -E -OO #{kernel} #{args.join(' ')}"
+      return "python -E #{kernel} #{args.join(' ')}"
     end
 
     protected
