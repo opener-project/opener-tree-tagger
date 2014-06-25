@@ -1,20 +1,28 @@
 module Opener
   class TreeTagger
     class CLI
-      attr_reader :options, :option_parser
+      attr_reader :argv, :options, :option_parser
 
       ##
+      # @param [Array] argv
       # @param [Hash] options
       #
-      def initialize(options = {})
+      def initialize(argv, options = {})
+        @argv    = argv
         @options = DEFAULT_OPTIONS.merge(options)
 
         @option_parser = OptionParser.new do |opts|
           opts.program_name   = 'tree-tagger'
           opts.summary_indent = '  '
 
+          opts.separator "\nOptions:\n\n"
+
           opts.on('-l', '--log', 'Enable logging to STDERR') do
             @options[:logging] = true
+          end
+
+          opts.on('--no-time', 'Disables adding of timestamps') do
+            @options[:args] << '--no-time'
           end
 
           opts.separator <<-EOF
@@ -31,7 +39,7 @@ Examples:
       # @param [String] input
       #
       def run(input)
-        option_parser.parse!(options[:args])
+        option_parser.parse!(argv)
 
         tagger = TreeTagger.new(options)
 

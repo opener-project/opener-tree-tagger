@@ -37,7 +37,7 @@ module Opener
         return stdout
       rescue Exception => error
         return Opener::Core::ErrorLayer.new(input, error.message, self.class).add
-      end        
+      end
     end
 
     def capture(input)
