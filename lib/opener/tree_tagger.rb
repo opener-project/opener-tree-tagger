@@ -31,13 +31,14 @@ module Opener
     end
 
     def run(input)
-      begin
-        stdout, stderr, process = capture(input)
-        raise stderr unless process.success?
-        return stdout
-      rescue Exception => error
-        return Opener::Core::ErrorLayer.new(input, error.message, self.class).add
-      end
+      stdout, stderr, process = capture(input)
+
+      raise stderr unless process.success?
+
+      return stdout
+
+    rescue Exception => error
+      return Opener::Core::ErrorLayer.new(input, error.message, self.class).add
     end
 
     def capture(input)
@@ -45,18 +46,10 @@ module Opener
     end
 
     def command
-      return "#{adjust_python_path} python -E -OO #{kernel} #{args.join(' ')}"
+      return "python -E -OO #{kernel} #{args.join(' ')}"
     end
 
     protected
-
-    ##
-    # @return [String]
-    #
-    def adjust_python_path
-      site_packages =  File.join(core_dir, 'site-packages')
-      "env PYTHONPATH=#{site_packages}:$PYTHONPATH"
-    end
 
     def core_dir
       File.expand_path("../../core", File.dirname(__FILE__))
