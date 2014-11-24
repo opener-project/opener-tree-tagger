@@ -2,6 +2,9 @@
 
 require 'opener/daemons'
 
-exec_path = File.expand_path("../../exec/tree-tagger.rb", __FILE__)
+controller = Opener::Daemons::Controller.new(
+  :name      => 'opener-tree-tagger',
+  :exec_path => File.expand_path('../../exec/tree-tagger.rb', __FILE__)
+)
 
-Opener::Daemons::Controller.new(:name => "tree-tagger", :exec_path => exec_path)
+controller.run

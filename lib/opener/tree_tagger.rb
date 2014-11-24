@@ -1,7 +1,6 @@
 require 'open3'
 require 'optparse'
 require 'nokogiri'
-require 'opener/core'
 
 require_relative 'tree_tagger/version'
 require_relative 'tree_tagger/cli'
@@ -36,9 +35,6 @@ module Opener
       raise stderr unless process.success?
 
       return stdout
-
-    rescue Exception => error
-      return Opener::Core::ErrorLayer.new(input, error.message, self.class).add
     end
 
     def capture(input)
