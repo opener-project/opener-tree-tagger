@@ -1,67 +1,64 @@
 module Opener
   class TreeTagger
+    ##
+    # CLI wrapper around {Opener::TreeTagger} using Slop.
+    #
+    # @!attribute [r] parser
+    #  @return [Slop]
+    #
     class CLI
-      attr_reader :argv, :options, :option_parser
+      attr_reader :parser
+
+      def initialize
+        @parser = configure_slop
+      end
 
       ##
       # @param [Array] argv
-      # @param [Hash] options
       #
-      def initialize(argv, options = {})
-        @argv    = argv
-        @options = DEFAULT_OPTIONS.merge(options)
+      def run(argv = ARGV)
+        parser.parse(argv)
+      end
 
-        @option_parser = OptionParser.new do |opts|
-          opts.program_name   = 'tree-tagger'
-          opts.summary_indent = '  '
+      ##
+      # @return [Slop]
+      #
+      def configure_slop
+        return Slop.new(:strict => false, :indent => 2, :help => true) do
+          banner 'Usage: tree-tagger [OPTIONS]'
 
-          opts.separator "\nOptions:\n\n"
+          separator <<-EOF.chomp
 
-          opts.on('-l', '--log', 'Enable logging to STDERR') do
-            @options[:logging] = true
-          end
+About:
 
-          opts.on('--no-time', 'Disables adding of timestamps') do
-            @options[:args] << '--no-time'
-          end
+    Rule base POS tagging using TreeTagger, supports various languages such as
+    Dutch and English. This command reads input from STDIN.
 
-          opts.separator <<-EOF
+Example:
 
-Examples:
-
-  cat example.kaf | #{opts.program_name}    # Basic usage
-  cat example.kaf | #{opts.program_name} -l # Logs information to STDERR
+    cat some_file.kaf | tree-tagger
           EOF
+
+          separator "\nOptions:\n"
+
+          on :v, :version, 'Shows the current version' do
+            abort "tree-tagger v#{VERSION} on #{RUBY_DESCRIPTION}"
+          end
+
+          on :'no-time', 'Disables adding of dynamic timestamps'
+
+          run do |opts, args|
+            if opts[:'no-time']
+              args = args + ['--no-time']
+            end
+
+            tagger = TreeTagger.new(:args => args)
+            input  = STDIN.tty? ? nil : STDIN.read
+
+            puts tagger.run(input)
+          end
         end
       end
-
-      ##
-      # @param [String] input
-      #
-      def run(input)
-        option_parser.parse!(argv)
-
-        tagger = TreeTagger.new(options)
-
-        puts tagger.run(input)
-      end
-
-      private
-
-      ##
-      # Shows the help message and exits the program.
-      #
-      def show_help
-        abort option_parser.to_s
-      end
-
-      ##
-      # Shows the version and exits the program.
-      #
-      def show_version
-        abort "#{option_parser.program_name} v#{VERSION} on #{RUBY_DESCRIPTION}"
-      end
-    end
-  end
-end
-
+    end # CLI
+  end # TreeTagger
+end # Opener

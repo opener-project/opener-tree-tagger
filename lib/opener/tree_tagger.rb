@@ -1,5 +1,5 @@
 require 'open3'
-require 'optparse'
+require 'slop'
 require 'nokogiri'
 
 require_relative 'tree_tagger/version'
