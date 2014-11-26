@@ -121,12 +121,12 @@
     <wf wid="w108" sent="4" para="1" offset="619" length="1"><![CDATA[.]]></wf>
   </text>
   <terms>
-    <term lemma="marco" morphofeat="NOM" pos="N" tid="t1" type="open">
+    <term lemma="Marco" morphofeat="NPR" pos="R" tid="t1" type="open">
       <span>
         <target id="w1"/>
       </span>
     </term>
-    <term lemma="Aurelio" morphofeat="NOM unknown_lemma" pos="N" tid="t2" type="open">
+    <term lemma="Aurelio" morphofeat="NPR" pos="R" tid="t2" type="open">
       <span>
         <target id="w2"/>
       </span>
@@ -161,7 +161,7 @@
         <target id="w8"/>
       </span>
     </term>
-    <term lemma="morta|morte|morto" morphofeat="NOM" pos="N" tid="t9" type="open">
+    <term lemma="morte" morphofeat="NOM" pos="N" tid="t9" type="open">
       <span>
         <target id="w9"/>
       </span>
@@ -356,12 +356,12 @@
         <target id="w47"/>
       </span>
     </term>
-    <term lemma="Antonino" morphofeat="NOM unknown_lemma" pos="N" tid="t48" type="open">
+    <term lemma="Antonino" morphofeat="NPR" pos="R" tid="t48" type="open">
       <span>
         <target id="w48"/>
       </span>
     </term>
-    <term lemma="Pio" morphofeat="NOM unknown_lemma" pos="N" tid="t49" type="open">
+    <term lemma="Pio" morphofeat="NPR" pos="R" tid="t49" type="open">
       <span>
         <target id="w49"/>
       </span>
